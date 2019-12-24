@@ -1,5 +1,4 @@
-New Simple Chess
-----------------
+# New Simple Chess
 
 A simple way to learn how to play Chess.
 
