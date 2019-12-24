@@ -1,5 +1,7 @@
 from random import shuffle
 
+from nsc.hand import Hand
+
 DECK_CONFIG = {
     "King":   7,
     "Queen":  8,
@@ -20,8 +22,9 @@ class Deck:
             for _ in range(DECK_CONFIG[card_type]):
                 self.deck.append(card_type)
         self.draw = []
-        self.white_discard = []
-        self.black_discard = []
+        self.hands = {}
+        for hand in ["White", "Black"]:
+            self.hands[hand] = Hand()
         self.difficulty = 0
 
     def set_difficulty(self, difficulty):
@@ -31,10 +34,17 @@ class Deck:
         Level 2 - 3 cards in hand, draw per turn, and choose between the 4 cards
         Level 3 - 5 cards in hand, draw per turn, and choose between the 6 cards
         """
-        self.difficulty = difficulty
+        self.difficulty = difficulty            
 
     def shuffle(self):
+        """
+        Shuffle the deck and 
+        """
         self.draw = self.deck.copy()
         shuffle(self.deck)
+
+    def new_game(self):
+        pass
+        
         
     
