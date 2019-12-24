@@ -12,6 +12,9 @@ DECK_CONFIG = {
     "Same":   6,
 }
 
+COLORS = ["White", "Black"]
+
+
 class Deck:
     """
     A class for managing the deck of cards used by NSC.
@@ -23,7 +26,7 @@ class Deck:
                 self.deck.append(card_type)
         self.draw = []
         self.hands = {}
-        for hand in ["White", "Black"]:
+        for hand in COLORS:
             self.hands[hand] = Hand()
         self.difficulty = 0
 
@@ -38,13 +41,26 @@ class Deck:
 
     def shuffle(self):
         """
-        Shuffle the deck and 
+        Shuffle the discard piles into the draw pile.
         """
-        self.draw = self.deck.copy()
-        shuffle(self.deck)
+        for color in COLORS:
+            discards = self.hands[color].shuffle_discards()
+            self.draw.extend(discards)
+        shuffle(self.draw)
 
     def new_game(self):
-        pass
-        
-        
-    
+        """
+        Prepare the deck and hands for a new game.
+        """
+        self.draw = self.deck.copy()
+        shuffle(self.draw)
+        for hand in COLORS:
+            self.hands[hand].reset()
+
+    def draw_card(self, color, amount=1):
+        """
+        Draw a card or cards for the specified color.
+        """
+        for _ in range(amount):
+            card = self.draw.pop()
+            self.hands[color].add_card(card)

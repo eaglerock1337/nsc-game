@@ -8,15 +8,11 @@ class Hand:
         self.cards = []
         self.discards = []
 
-    def add_card(self, cards):
+    def add_card(self, card):
         """
-        Add a drawn card (or cards) to the hand.
+        Add a drawn card to the hand.
         """
-        if isinstance(cards, str):
-            self.cards.append(cards)
-        else:
-            for card in cards:
-                self.cards.append(card)
+        self.cards.append(card)
 
     def discard(self, card):
         """
@@ -66,7 +62,7 @@ class Hand:
         top_discard = self.discards.pop()
         other_discards = self.discards
         self.discards = [top_discard]
-        
+
         return other_discards
 
     def reset(self):
