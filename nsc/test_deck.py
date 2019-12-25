@@ -1,5 +1,5 @@
-from nsc.deck import Deck
-from nsc.hand import Hand
+from nsc import Deck
+from nsc import Hand
 
 # Tests
 

@@ -3,13 +3,13 @@ from random import shuffle
 from nsc.hand import Hand
 
 DECK_CONFIG = {
-    "King":   7,
-    "Queen":  8,
-    "Rook":   8,
+    "King": 7,
+    "Queen": 8,
+    "Rook": 8,
     "Bishop": 8,
     "Knight": 8,
-    "Pawn":   11,
-    "Same":   6,
+    "Pawn": 11,
+    "Same": 6,
 }
 
 COLORS = ["White", "Black"]
@@ -19,6 +19,7 @@ class Deck:
     """
     A class for managing the deck of cards used by NSC.
     """
+
     def __init__(self):
         self.deck = []
         for card_type in DECK_CONFIG.keys():
@@ -37,7 +38,7 @@ class Deck:
         Level 2 - 3 cards in hand, draw per turn, and choose between the 4 cards
         Level 3 - 5 cards in hand, draw per turn, and choose between the 6 cards
         """
-        self.difficulty = difficulty            
+        self.difficulty = difficulty
 
     def shuffle(self):
         """

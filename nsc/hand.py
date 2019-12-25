@@ -1,9 +1,11 @@
 from random import shuffle
 
+
 class Hand:
     """
     A simple class for managing a user's hand in NSC.
     """
+
     def __init__(self):
         self.cards = []
         self.discards = []
@@ -31,7 +33,7 @@ class Hand:
         shuffle(self.cards)
         for _ in range(len(self.cards)):
             card = self.cards.pop()
-            self.discards.append(card)      
+            self.discards.append(card)
 
     def get_cards(self):
         """

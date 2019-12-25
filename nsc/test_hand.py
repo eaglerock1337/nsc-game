@@ -1,4 +1,4 @@
-from nsc.hand import Hand
+from nsc import Hand
 
 # Tests
 
