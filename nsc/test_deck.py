@@ -16,12 +16,6 @@ def test_deck_create():
     assert isinstance(object.hands["Black"], Hand)
 
 
-def test_deck_set_difficulty():
-    object = Deck()
-    object.set_difficulty(2)
-    assert object.difficulty == 2
-
-
 def test_deck_shuffle():
     result = ["Queen", "Pawn", "King", "Pawn", "Rook"]
     object = Deck()

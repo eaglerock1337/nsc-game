@@ -2,6 +2,7 @@ from random import shuffle
 
 from nsc.hand import Hand
 
+
 DECK_CONFIG = {
     "King": 7,
     "Queen": 8,
@@ -29,16 +30,6 @@ class Deck:
         self.hands = {}
         for hand in COLORS:
             self.hands[hand] = Hand()
-        self.difficulty = 0
-
-    def set_difficulty(self, difficulty):
-        """
-        Set the difficulty mode of NSC:
-        Level 1 - No hand, can only play the drawn card
-        Level 2 - 3 cards in hand, draw per turn, and choose between the 4 cards
-        Level 3 - 5 cards in hand, draw per turn, and choose between the 6 cards
-        """
-        self.difficulty = difficulty
 
     def shuffle(self):
         """
